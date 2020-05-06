@@ -8,17 +8,15 @@ class Command_handler:
             Just run the script and say the command
         """
     def handler(self, command):
-        if(command == "shutdown" or command == "Shutdown"):
-            self.shutdown()
-
-        if(command == "standby" or command == "stand by"):
-            self.standby()
-
-        if(command == "open Steam" or command == "steam"):
-            self.open_steam()
-
-        else:
-            self.open_browser(command)
+            command = str(command).lower
+            if(command == "shutdown"):
+                self.shutdown()
+            if(command == "standby"):
+                self.standby()
+            if(command == "open Steam"):
+                self.open_steam()
+            else:
+                self.open_browser(command)
 
     def shutdown(self):
         print("shutting down computer")
