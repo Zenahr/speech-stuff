@@ -8,13 +8,14 @@ class Command_handler:
             Just run the script and say the command
         """
     def handler(self, command):
-        if(command == "shutdown" or command == "Shutdown"):
+        command = str(command).lower
+        if(command == "shutdown"):
             self.shutdown()
 
         if(command == "standby" or command == "stand by"):
             self.standby()
 
-        if(command == "open Steam" or command == "steam"):
+        if(command == "open steam" or command == "steam"):
             self.open_steam()
 
         else:
@@ -29,18 +30,16 @@ class Command_handler:
         os.system("rundll32.exe powrprof.dll,SetSuspendState 0,1,0") # put into standby mode. If doesn't work, turn off hibernation feature on machine.
 
     def open_browser(self, command):
-        if(command == "Google"):
+        if(command == "google"):
             wb.open_new("http://www.google.com")
-        if(command == "YouTube"):
+        if(command == "youtube"):
             wb.open_new("http://www.youtube.com")
-        if(command == 'GMX' or  'email'):
+        if(command == 'gmx' or  'email'):
             wb.open_new('http://www.gmx.de')
         if (command == 'good horror movie' or  'horror movie'):
             wb.open_new('https://www.netflix.com/browse/genre/8711?bc=34399')
-        if (command == 'some fun' or  'I want to have some fun' or  'I need fun'):
+        if (command == 'some fun' or  'i want to have some fun' or  'i need fun'):
             wb.open_new('https://de.pornhub.com/view_video.php?viewkey=ph5e925507ecede')
-
-
 
 
     def open_steam(self):
