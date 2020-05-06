@@ -1,29 +1,20 @@
 import speech_recognition as sr
 import webbrowser as wb
 
-r1 = sr.Recognizer()
 r2 = sr.Recognizer()
 r3 = sr.Recognizer()
 
 with sr.Microphone() as source:
-        print("[search edureka: search youtube]")
         print("speak now")
         audio = r3.listen(source)
 
-if "gern geschehen" in r2.recognize_google(audio, language="de-DE"):
-    print("detected")
-    r2 = sr.Recognizer()
-    url = "https://www.google.com/"
+with open(r"key.json", "r") as f:
+    credentials_json = f.read()
 
-    with sr.Microphone as source:
-        print("search your query!")
-        audio = r2.listen(source)
+if "Google" in r2.recognize_google_cloud(audio, credentials_json=credentials_json):
+    print("detected Google")
+    wb.get().open_new("https://www.google.com/")
 
-        try:
-            get = r2.recognize_google(audio)
-            print(get)
-            wb.get().open_new(url+get)
-        except sr.UnknownValueError:
-            print("error")
-        except sr.RequestError as e:
-            print("failed".format(e))
+if "youtube" in r2.recognize_google_cloud(audio, credentials_json=credentials_json):
+    print("detected youtube")
+    wb.get().open_new("https://www.youtube.com/")
