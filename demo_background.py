@@ -32,7 +32,7 @@ stop_listening = r.listen_in_background(m, callback)
 # `stop_listening` is now a function that, when called, stops background listening
 
 # do some unrelated computations for 5 seconds
-time.sleep(10000)  # we're still listening even though the main thread is doing other things
+time.sleep(1000000)  # we're still listening even though the main thread is doing other things
 
 # calling this function requests that the background listener stop listening
 stop_listening(wait_for_stop=False)

@@ -33,10 +33,14 @@ class Command_handler:
             wb.open_new("http://www.google.com")
         if(command == "YouTube"):
             wb.open_new("http://www.youtube.com")
-        if(command == 'GMX' or command == 'email'):
+        if(command == 'GMX' or  'email'):
             wb.open_new('http://www.gmx.de')
-        if (command == 'good horror movie' or command == 'horror movie'):
+        if (command == 'good horror movie' or  'horror movie'):
             wb.open_new('https://www.netflix.com/browse/genre/8711?bc=34399')
+        if (command == 'some fun' or  'I want to have some fun' or  'I need fun'):
+            wb.open_new('https://de.pornhub.com/view_video.php?viewkey=ph5e925507ecede')
+
+
 
 
     def open_steam(self):
