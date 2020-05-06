@@ -8,7 +8,7 @@ class Command_handler:
             Just run the script and say the command
         """
     def handler(self, command):
-            command = str(command).lower
+            command = str(command.lower)
             if(command == "shutdown"):
                 self.shutdown()
             if(command == "standby"):
