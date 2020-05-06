@@ -35,6 +35,9 @@ class Command_handler:
             wb.open_new("http://www.youtube.com")
         if(command == 'GMX' or command == 'email'):
             wb.open_new('http://www.gmx.de')
+        if (command == 'good horror movie' or command == 'horror movie'):
+            wb.open_new('https://www.netflix.com/browse/genre/8711?bc=34399')
+
 
     def open_steam(self):
         print("opening steam client")
